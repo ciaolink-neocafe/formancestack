@@ -2,8 +2,8 @@ FROM golang:1.19 AS builder
 ARG APP_SHA
 ARG VERSION
 WORKDIR /src
-COPY sdks/go /src/sdks/go
-COPY libs /src/libs
+COPY ../../sdks/go /src/sdks/go
+COPY ../../libs /src/libs
 COPY components/wallets /src/components/wallets
 WORKDIR /src/components/wallets
 RUN --mount=type=cache,id=gobuild,target=/root/.cache/go-build \
